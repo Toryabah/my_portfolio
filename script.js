@@ -72,3 +72,58 @@ scrollBtn.addEventListener("click", () => {
     });
 
 });
+
+
+// HERO INTRO TYPING
+
+const words=[
+"Front-End Web Developer",
+"Web Designer",
+"Freelancer",
+"Problem Solver",
+"Web Tutor"
+];
+
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
+
+const typing=document.getElementById("typing");
+
+function type(){
+
+let current=words[wordIndex];
+
+if(!deleting){
+
+typing.textContent=current.substring(0,charIndex++);
+
+if(charIndex>current.length){
+
+deleting=true;
+
+setTimeout(type,1500);
+
+return;
+
+}
+
+}else{
+
+typing.textContent=current.substring(0,charIndex--);
+
+if(charIndex<0){
+
+deleting=false;
+
+wordIndex=(wordIndex+1)%words.length;
+
+}
+
+}
+
+setTimeout(type,deleting?60:120);
+
+}
+
+type();

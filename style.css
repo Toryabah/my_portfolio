@@ -4,8 +4,10 @@
             
         }
 
-         html{
+         html,
+         body{
             scroll-behavior: smooth;
+            width: 100%;
         }   
 
         @keyframes fadeIn{
@@ -80,18 +82,46 @@
                 position: absolute;
                 top: 100%;
                 right: -100%;
+                width: 100%;
+                left: auto;
                 background: #0F172A;
                 display: flex;
                 flex-direction: column;
                 text-align: center;
                 padding: 25px 0;
                 transition: .4s;
+                z-index: 999;
             }
             .nav-links.active{
                 right: 0;
             }  
         }  
 
+        /* HERO INTRO */
+
+        #typing{
+
+                color:#F59E0B;
+
+                font-weight:bold;
+
+                border-right:3px solid #F59E0B;
+
+                padding-right:5px;
+
+                animation:blink .8s infinite;
+
+                }
+
+                @keyframes blink{
+
+                50%{
+
+                border-color:transparent;
+
+                }
+
+                }
 
             /* HERO STYLING */
 
@@ -126,6 +156,7 @@
             font-size: 30px; margin: 20px 0;
             color: #cbd5e1;
          }
+
          .description {
             font-size: 18px;
             line-height: 1.8;
@@ -133,7 +164,7 @@
             margin-bottom: 35px;
          }
 
-         .hero-imgage {
+         .hero-image {
             flex: 1;
             display: flex;
             justify-content: center;
@@ -684,10 +715,10 @@
             .contact-page{
 
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
 
-                gap: 50px;
-                padding: 80px;
+                gap: 30px;
+                padding: 80px 8%;
             }
 
             .contact-info h2{
@@ -831,7 +862,10 @@
                 }
 
                 .footer img {
-                    width: 10%; float: left; top: auto;
+                    width: 70px; 
+                    display: block; 
+                    margin: 0 auto 20px;
+                    float: none;
                 }
 
                 .copyright {
